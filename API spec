@@ -1,0 +1,197 @@
+openapi: 3.0.0
+info:
+  title: Jamf Inventory Record Service
+  description: Get raw inventory record of a macOS device using its serial number from Jamf Pro.
+  version: v1.0.0
+servers:
+  - url: {InstanceURL}
+paths:
+  /JSSResource/computers/serialnumber/{serialNumber}:
+    get:
+      operationId: Raw Inventory Record
+      summary: Get raw unabridged inventory record of a macOS device using its serial number from Jamf Pro.
+      parameters:
+        - in: path
+          name: serialNumber
+          description: The serial number of the device
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+      security:
+        - bearerAuth: []
+      deprecated: false
+
+  /JSSResource/computers/serialnumber/{serialNumber}/subset/General:
+    get:
+      operationId: General Info
+      summary: Get General information (host name, username, last checkin, last inventory update ip address, jamf version, and more) from the inventory record by serial number.
+      parameters:
+        - in: path
+          name: serialNumber
+          description: The serial number of the device
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+      security:
+        - bearerAuth: []
+
+  /JSSResource/computers/serialnumber/{serialNumber}/subset/Hardware:
+    get:
+      operationId: Hardware Info
+      summary: Get Hardware information (model ID, os version, and more) from the inventory record by serial number.
+      parameters:
+        - in: path
+          name: serialNumber
+          description: The serial number of the device
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+      security:
+        - bearerAuth: []
+
+  /JSSResource/computers/serialnumber/{serialNumber}/subset/Security:
+    get:
+      operationId: Security Info
+      summary: Get security information (Filevault status, SIP status, Gatekeeper status, XProtect version, firewall status and more) from the inventory record by serial number.
+      parameters:
+        - in: path
+          name: serialNumber
+          description: The serial number of the device
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+      security:
+        - bearerAuth: []
+
+  /JSSResource/computers/serialnumber/{serialNumber}/subset/Certificates:
+    get:
+      operationId: Certificates Info
+      summary: Get Certificates information from the inventory record by serial number.
+      parameters:
+        - in: path
+          name: serialNumber
+          description: The serial number of the device
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+      security:
+        - bearerAuth: []
+
+  /JSSResource/computers/serialnumber/{serialNumber}/subset/Software:
+    get:
+      operationId: Software Info
+      summary: Get Software information (installed applications, available updates, fonts, plugins and more) from the inventory record by serial number.
+      parameters:
+        - in: path
+          name: serialNumber
+          description: The serial number of the device
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+      security:
+        - bearerAuth: []
+
+  /JSSResource/computers/serialnumber/{serialNumber}/subset/ExtensionAttributes:
+    get:
+      operationId: Extension Attributes Info
+      summary: Get custom Attributes information from the inventory record by serial number.
+      parameters:
+        - in: path
+          name: serialNumber
+          description: The serial number of the device
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+      security:
+        - bearerAuth: []
+
+  /JSSResource/computers/serialnumber/{serialNumber}/subset/GroupsAccounts:
+    get:
+      operationId: Groups Info
+      summary: Get Groups (Jamf Pro smart and static group memberships) information from the inventory record by serial number.
+      parameters:
+        - in: path
+          name: serialNumber
+          description: The serial number of the device
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+      security:
+        - bearerAuth: []
+
+  /JSSResource/computers/serialnumber/{serialNumber}/subset/ConfigurationProfiles:
+    get:
+      operationId: Configuration Profiles Info
+      summary: Get Configuration Profiles (profile names) information from the inventory record by serial number.
+      parameters:
+        - in: path
+          name: serialNumber
+          description: The serial number of the device
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+      security:
+        - bearerAuth: []
