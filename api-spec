@@ -1,3 +1,4 @@
+# Copyright (c) 2024 Jamf
 openapi: 3.0.0
 info:
   title: Jamf Inventory Record Service
