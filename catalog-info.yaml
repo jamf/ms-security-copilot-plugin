@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ms-security-copilot-plugin
+  tags:
+  - openapi
+  - microsoft
+  - security-copilot
+  - integration
+spec:
+  type: artifact
+  lifecycle: production
+  owner: datascience
+  system: jamf-pro-server
