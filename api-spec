@@ -29,9 +29,9 @@ paths:
         - bearerAuth: []
       deprecated: false
 
-  /JSSResource/computers/serialnumber/{serialNumber}/subset/General:
+  /JSSResource/computers/serialnumber/{serialNumber}/subset/General&Location:
     get:
-      operationId: General Info
+      operationId: General and Location Info
       summary: Get General information (host name, username, last checkin, last inventory update ip address, jamf version, and more) from the inventory record by serial number.
       parameters:
         - in: path
@@ -50,31 +50,10 @@ paths:
       security:
         - bearerAuth: []
 
-  /JSSResource/computers/serialnumber/{serialNumber}/subset/Hardware:
+  /JSSResource/computers/serialnumber/{serialNumber}/subset/Hardware&Security:
     get:
-      operationId: Hardware Info
-      summary: Get Hardware information (model ID, os version, and more) from the inventory record by serial number.
-      parameters:
-        - in: path
-          name: serialNumber
-          description: The serial number of the device
-          schema:
-            type: string
-          required: true
-      responses:
-        '200':
-          description: Successful response
-        '401':
-          description: Unauthorized
-        '404':
-          description: Not Found
-      security:
-        - bearerAuth: []
-
-  /JSSResource/computers/serialnumber/{serialNumber}/subset/Security:
-    get:
-      operationId: Security Info
-      summary: Get security information (Filevault status, SIP status, Gatekeeper status, XProtect version, firewall status and more) from the inventory record by serial number.
+      operationId: Hardware and Security Info
+      summary: Get Hardware info and Security settings (model ID, os version, Filevault status, SIP status, Gatekeeper status, XProtect version, firewall status and more) from the inventory record by serial number.
       parameters:
         - in: path
           name: serialNumber
