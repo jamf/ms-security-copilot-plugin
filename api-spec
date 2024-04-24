@@ -10,7 +10,10 @@ paths:
   /JSSResource/computers/serialnumber/{serialNumber}:
     get:
       operationId: Raw Inventory Record
-      description: Get raw unabridged inventory record of a macOS device using its serial number from Jamf Pro.
+      description: |
+        Get entire macOS inventory record from Jamf Pro by providing its serial number
+        #ExamplePrompt Give me a summary of what you know about H2WFP7BPQ6NV
+      summary: Get raw unabridged inventory record of a macOS device using its serial number from Jamf Pro.
       parameters:
         - in: path
           name: serialNumber
@@ -32,7 +35,10 @@ paths:
   /JSSResource/computers/serialnumber/{serialNumber}/subset/General&Location:
     get:
       operationId: General and Location Info
-      description: Get General information (host name, username, last checkin, last inventory update ip address, jamf version, and more) from the inventory record by serial number.
+      description: |
+        Get General information (host name, username, last checkin, last inventory update ip address, jamf version, and more) from the inventory record by serial number.
+        #ExamplePrompt When was the last time this mac checked in? H2WFP7BPQ6NV
+      summary: Get General information from the inventory record by serial number.
       parameters:
         - in: path
           name: serialNumber
@@ -53,7 +59,13 @@ paths:
   /JSSResource/computers/serialnumber/{serialNumber}/subset/Hardware&Security:
     get:
       operationId: Hardware and Security Info
-      description: Get Hardware info and Security settings (model ID, os version, Filevault status, SIP status, Gatekeeper status, XProtect version, firewall status and more) from the inventory record by serial number.
+      description: |
+        Get macOS Hardware info and Security settings (model ID, os version, Filevault status, SIP status, Gatekeeper status, XProtect version, firewall status and more) from the inventory record in Jamf Pro by providing serial number.
+        #ExamplePrompt Does this mac have Gatekeeper disabled? H2WFP7BPQ6NV
+        #ExamplePrompt Do you see any security configuration gaps for H2WFP7BPQ6NV?
+        #ExamplePrompt What's the filevault status for H2WFP7BPQ6NV?
+        #ExamplePrompt What os version is H2WFP7BPQ6NV on?
+      summary: Get Hardware info and Security settings from the inventory record by serial number.
       parameters:
         - in: path
           name: serialNumber
@@ -74,7 +86,10 @@ paths:
   /JSSResource/computers/serialnumber/{serialNumber}/subset/Certificates:
     get:
       operationId: Certificates Info
-      description: Get Certificates information from the inventory record by serial number.
+      description: |
+        Get Certificates information for a macOS device from the Jamf Pro inventory record by providing the macOS serial number.
+        #ExamplePrompt List the certficiates that are installed on this mac H2WFP7BPQ6NV
+      summary: Get Certificates information from the inventory record by serial number.
       parameters:
         - in: path
           name: serialNumber
@@ -95,7 +110,12 @@ paths:
   /JSSResource/computers/serialnumber/{serialNumber}/subset/Software:
     get:
       operationId: Software Info
-      description: Get Software information (installed applications, available updates, fonts, plugins and more) from the inventory record by serial number.
+      description: |
+        Get macOS software information (installed applications, available updates, fonts, plugins and more) for an endpoint from the Jamf Pro inventory record by providing the mac serial number.
+        #ExamplePrompt What applications are installed on H2WFP7BPQ6NV?
+        #ExamplePrompt What version of Firefox is installed on H2WFP7BPQ6NV?
+        #ExamplePrompt Does the mac H2WFP7BPQ6NV appear to have any suspicious applications installed?
+      summary: Get macOS software information from the jamf inventory record by serial number.
       parameters:
         - in: path
           name: serialNumber
@@ -116,7 +136,11 @@ paths:
   /JSSResource/computers/serialnumber/{serialNumber}/subset/ExtensionAttributes:
     get:
       operationId: Extension Attributes Info
-      description: Get custom Attributes information from the inventory record by serial number.
+      description: |
+        Get custom (specific to the cusotmer) attribute information for a macOS endpoint from the Jamf inventory record by providing the mac serial number.
+        #ExamplePrompt What custom data points is jamf collecting on this mac H2WFP7BPQ6NV?
+        #Example What is the value of [insert customer specific inventory attribute] for this mac H2WFP7BPQ6NV?
+      summary: Get custom attributes information from the inventory record by serial number.
       parameters:
         - in: path
           name: serialNumber
@@ -137,7 +161,10 @@ paths:
   /JSSResource/computers/serialnumber/{serialNumber}/subset/GroupsAccounts:
     get:
       operationId: Groups Info
-      description: Get Groups (Jamf Pro smart and static group memberships) information from the inventory record by serial number.
+      description: |
+        Get group membership (Jamf Pro smart and static groups) information for a macOS endpoint from the jamf inventory record by providing the mac serial number.
+        #ExamplePrompt what smart groups is this mac a member of H2WFP7BPQ6NV?
+      summary: Get Groups (Jamf Pro smart and static group memberships) information from the inventory record by serial number.
       parameters:
         - in: path
           name: serialNumber
@@ -158,7 +185,10 @@ paths:
   /JSSResource/computers/serialnumber/{serialNumber}/subset/ConfigurationProfiles:
     get:
       operationId: Configuration Profiles Info
-      description: Get Configuration Profiles (profile names) information from the inventory record by serial number.
+      description: |
+        Get Configuration Profiles (profile ids) information from the inventory record by serial number.
+        #ExamplePrompt list the configuration profiles for this mac H2WFP7BPQ6NV
+      summary: Get Configuration Profiles (profile ids) information from the inventory record by serial number.
       parameters:
         - in: path
           name: serialNumber
