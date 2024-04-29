@@ -1,8 +1,8 @@
 # Copyright (c) 2024 Jamf
 openapi: 3.0.0
 info:
-  title: Jamf Inventory Record Service
-  description: Get raw inventory record of a macOS device using its serial number from Jamf Pro.
+  title: Jamf
+  description: Get inventory data from Jamf Pro for a macOS device by providing its serial number.
   version: v1.0.0
 servers:
   - url: {InstanceURL}
