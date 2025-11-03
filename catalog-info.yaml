@@ -10,5 +10,5 @@ metadata:
 spec:
   type: artifact
   lifecycle: production
-  owner: datascience
+  owner: data-science
   system: jamf-pro-server
