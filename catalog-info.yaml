@@ -3,10 +3,11 @@ kind: Resource
 metadata:
   name: ms-security-copilot-plugin
   tags:
-  - openapi
-  - microsoft
-  - security-copilot
-  - integration
+    - openapi
+    - microsoft
+    - security-copilot
+    - integration
+    - nist
 spec:
   type: artifact
   lifecycle: production
